@@ -34,7 +34,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         func applicationDidFinishLaunching(_ notification: Notification) {
             if let window = NSApplication.shared.windows.first {
                 self.window = window
-                updateWindowSize()  // Ustawiamy rozmiar okna przy starcie aplikacji
+                updateWindowSize()  
             }
         }
         
@@ -50,12 +50,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         func setWindowSize(_ size: NSSize) {
-            // Ustawienie rozmiaru okna na podany rozmiar
             var frame = window.frame
             frame.size = size
             window.setFrame(frame, display: true, animate: true)
-            
-            // Blokowanie zmiany rozmiaru przez użytkownika
+
             window.minSize = size
             window.maxSize = size            
         }
