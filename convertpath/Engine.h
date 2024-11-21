@@ -1,9 +1,3 @@
-//
-//  Engine.hpp
-//  convertpath
-//
-//  Created by Krzysztof Żelazek on 17/04/2024.
-//
 
 #ifndef Engine_h
 #define Engine_h
