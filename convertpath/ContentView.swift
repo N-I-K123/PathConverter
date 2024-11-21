@@ -86,7 +86,7 @@ struct FullView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
             }
-            .background(!selectedSystem ? Color.blue.opacity(0.3) : Color.clear) // Podświetlenie wybranej opcji
+            .background(!selectedSystem ? Color.blue.opacity(0.3) : Color.clear) 
             .cornerRadius(5)
             .padding(.trailing, 10)
             
@@ -98,7 +98,7 @@ struct FullView: View {
                     .padding()
                     .frame(maxWidth: .infinity)
             }
-            .background(selectedSystem ? Color.blue.opacity(0.3) : Color.clear) // Podświetlenie wybranej opcji
+            .background(selectedSystem ? Color.blue.opacity(0.3) : Color.clear) 
             .cornerRadius(5)
             
             Spacer(minLength: 300)
@@ -134,7 +134,6 @@ struct FullView: View {
                         engine(std.string(text))
                         convertedPath = String(getConvertedPath());
                         }
-                    //.disabled(true)
                 Button(action: {
                     text = ""
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.005){
@@ -144,7 +143,7 @@ struct FullView: View {
                         }
                     }
                 }){
-                    Image(systemName: "doc.on.clipboard") // Ikona przycisku wklejania
+                    Image(systemName: "doc.on.clipboard") 
                         .padding()
                         .foregroundColor(.blue)
                     
@@ -156,13 +155,13 @@ struct FullView: View {
                 Spacer()
                 Text("Converted Path: ");
                 Spacer()
-                TextField("Converted", text: $convertedPath) // Dodanie pola tekstowego
+                TextField("Converted", text: $convertedPath) 
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding()
                 Button(action: {
                     ClipboardHelper.copyToClipboard(text: self.convertedPath)
                             }) {
-                                Image(systemName: "doc.on.doc") // Ikona przycisku kopiowania
+                                Image(systemName: "doc.on.doc") 
                                     .padding()
                                     .foregroundColor(.blue)
                             }
@@ -175,7 +174,6 @@ struct FullView: View {
         
     }
     init() {
-            // Call the functions when the view is initialized
             setPrefixStatus(ownPrefix)
             setPrefix(std.string(prefix))
             setConversionDestination(selectedSystem)
